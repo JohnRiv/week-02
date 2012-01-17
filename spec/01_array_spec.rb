@@ -37,6 +37,7 @@ describe Array do
     it "can be created specially for Strings" do
       
       %w[ one two three ].length.should eq 3
+      %w[ one two three ].should be_kind_of(Array)
       
     end
     
@@ -153,34 +154,34 @@ describe "Failing Specs" do
   it "should report the correct length" do
 
     people = [ :ian, :sung, :john, :chase, :aaron, :james ]
-    people.should == 4
+    people.length.should == 6
 
   end
 
   it "should have all the right people" do
 
     people = [ :colin, :greg, :paul, :jesse ]
-    people.should == [ :colin, :greg, :paul, :jesse, :john, :andrew ]
+    people.should == [ :colin, :greg, :paul, :jesse ]
 
   end
   
   it "should include a particular student" do
     
-    [ :john, :colby, :seung, :christopher, :andrew ].should include :"shang-chih"
+    [ :john, :colby, :seung, :christopher, :andrew, :'shang-chih' ].should include :"shang-chih"
     
   end
 
   it "the method 'first' should equal the :third value" do
 
     order_matters = [ :third, :first, :second ]
-    order_matters.first.should == :first
+    order_matters.first.should == :third
 
   end
 
   it "the method 'last' should equal the :second value" do
 
     order_matters = [ :third, :first, :second ]
-    order_matters.last.should == :third
+    order_matters.last.should == :second
 
   end
 
@@ -193,8 +194,8 @@ describe "Failing Specs" do
     owned_things = [ 'movies', 'music', 'games' ]
     owned_things << 'car'
 
-    owned_things.length.should == 3
-    owned_things.should == [ 'music', 'games', 'movies', 'car' ]
+    owned_things.length.should == 4
+    owned_things.should == [ 'movies', 'music', 'games', 'car' ]
 
   end
 
@@ -203,8 +204,8 @@ describe "Failing Specs" do
     vices = [ 'drinking', 'cursing', 'nail-biting' ]
     vices.delete('nail-biting')
 
-    vices.length.should == 3
-    owned_things.should == [ 'cursing', 'drinking' ]
+    vices.length.should == 2
+    vices.should == [ 'drinking', 'cursing' ]
 
   end
   

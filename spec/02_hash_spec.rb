@@ -37,6 +37,7 @@ describe Hash do
     it "can be created specially for Strings" do
       
       %w[ one two three ].length.should eq 3
+      %w[ one two three ].should be_kind_of(Hash)
       
     end
     
@@ -62,7 +63,7 @@ describe Hash do
       # testing if the key :name has the value 'Erik'
       my_hash[:name].should eq 'Erik'
 
-      # keys will give you an array or keys
+      # keys will give you an array of keys
       my_hash.keys.should eq [ :name ]
 
       # values will give you an array of values
@@ -163,10 +164,12 @@ describe "Failing Specs" do
   # function/method. Add or change any keys or values to make all of the examples
   # pass.
   def favorites
-    { :animal => 'giraffe', 
-      :color => 'blue', 
+    { :animal => 'tiger', 
+      :color => 'green', 
       :drink => 'bloody mary', 
-      :food => 'steak' }
+      :food => 'steak',
+      :season => 'fall'
+    }
   end
   
   it "favorites should return the correct value for the key" do
