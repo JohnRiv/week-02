@@ -37,7 +37,6 @@ describe Hash do
     it "can be created specially for Strings" do
       
       %w[ one two three ].length.should eq 3
-      %w[ one two three ].should be_kind_of(Hash)
       
     end
     
